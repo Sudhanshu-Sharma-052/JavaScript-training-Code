@@ -1,0 +1,16 @@
+<script>
+    // Array of cinema halls
+const cinemaHalls = [
+    { name: "Cineplex 1", isMultiplex: true },
+    { name: "Grand Theatre", isMultiplex: false },
+    { name: "Multiplex X", isMultiplex: true },
+    { name: "Classic Cinema", isMultiplex: false },
+];
+function showMultiplexHalls(halls, callback) {
+    const multiplexHalls = halls.filter(callback);
+    multiplexHalls.forEach(hall => console.log(hall.name));
+}
+showMultiplexHalls(cinemaHalls, cinemaHall=> {
+    return cinemaHall.isMultiplex;
+});    
+</script>

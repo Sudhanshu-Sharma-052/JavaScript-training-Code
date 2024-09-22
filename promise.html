@@ -1,0 +1,19 @@
+<script>
+    function simpleInterest(p,r,t){ 
+        let pr = new Promise((resolve,reject)=>{
+            setTimeout(function(){
+                if(p<0||t<0){
+                    reject('Amount can not be less then zero ')
+                }
+                let si = (p*r*t)/100
+                resolve (si)
+            },3000)
+        }) 
+        return pr
+    }
+    simpleInterest(1000,10,2).then((result)=>{
+        console.log(result);
+    }).catch((error)=>{
+        console.log(error);
+    })
+</script>

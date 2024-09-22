@@ -1,0 +1,24 @@
+<script>
+    let randomNum = Math.random()
+    cart = ['books','mobile','laptop']
+    function createOrder(id,callback){
+       let order = cart.map(item=>item.slice(0,2)+randomNum)
+        callback()
+    }
+    function goForPayment(orderid,callback){
+        callback(order)
+    }
+    function updateWallet(transactionid,callback){
+        callback(message)
+    }
+    createOrder(0,(order)=>{
+        console.log(order);
+        goForPayment(orderid,(payment)=>{
+            console.log(orderid);
+            updateWallet()
+            updateWallet(transactionid,(message)=>{
+                console.log('your payment has been done');
+            })
+        })
+    })
+</script>

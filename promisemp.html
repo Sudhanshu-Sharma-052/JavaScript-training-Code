@@ -1,0 +1,92 @@
+<script>
+    // Function to get employee details by ID
+function getEmp(id) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const employees = [
+                { id: 1, name: 'RAM', post: 'Professor' },
+                { id: 2, name: 'Shivam', post: 'Lecturer' },
+                { id: 3, name: 'Deepak', post: 'Professor' },
+            ];
+            const emp = employees.find(emp => emp.id === id);
+            if (emp) {
+                resolve(emp);
+            } else {
+                reject('Employee not found');
+            }
+        }, 2000);
+    });
+}
+
+// Function to get basic salary based on the employee's post
+function getBasicSalary(post) {
+    if(post==''){    
+    }
+    return new Promise((resolve, reject) => {
+        let salary;
+        if (post === 'Professor') {
+            salary = 40000;
+        } else if (post === 'Lecturer') {
+            salary = 30000;
+        } else {
+            salary = 3000;
+        }
+        setTimeout(() => {
+            resolve(salary);
+        }, 3000);
+    });
+}
+
+// Function to calculate the gross salary with updated HRA
+function grossSalary(salary, post) {
+    return new Promise((resolve) => {
+        let hra;
+        if (post === 'Professor') {
+            hra = 10000;
+        } else if (post === 'Lecturer') {
+            hra = 8000;
+        } else {
+            hra = 6000;
+        }
+
+        let da = salary * 0.50;
+        let pf = salary * 0.10;
+        let ma = salary * 10;
+        let grosSal = salary +da+ pf + da + hra;
+        setTimeout(() => {
+            resolve(grosSal);
+        }, 500);
+    });
+}
+
+// Function to get the final salary statement
+function getFinal(grossSal) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(`Your gross salary is ${grossSal}`);
+        }, 1000);
+    });
+}
+
+// Chaining the Promises
+getEmp(1)
+    .then(emp => {
+        console.log(emp);
+        return getBasicSalary(emp.post).then(salary => ({ salary, post: emp.post }));
+    })
+    .then(({ salary, post }) => {
+        console.log('Total salary is: ' + salary);
+        console.log(post)
+        return grossSalary(salary, post);
+    })
+    .then(grosssal => {
+        return getFinal(grosssal);
+    })
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+</script>

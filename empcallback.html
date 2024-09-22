@@ -1,0 +1,42 @@
+<script>
+    emp = {
+        id: 1,
+        name: 'ram',
+        post: 'professor'
+    }
+    function getEmp(id,callback){
+        callback(emp)
+    }
+    function getBasicSalary(post,callback){
+    setTimeout(()=>{
+        let basic
+        if(post==='professor'){
+            basic=50000
+        }
+        else if(post === 'lecturer'){
+            basic = 40000
+        }
+        else{
+            basic = 30000
+        }
+        callback(basic)    
+},3000)
+    }
+        function getGrossSalary(basic,callback){
+            setTimeout(()=>{
+                let gross
+                gross = basic+7000+basic/2+basic/10
+                callback(gross)
+             },4000)
+        }
+        getEmp(1,(emp)=>{
+            console.log(emp);
+            getBasicSalary(emp.post,(basic)=>{
+                console.log(basic);
+                getGrossSalary(basic,(gross)=>{
+
+                    console.log('gross salary is:',gross);
+                })
+            })
+        })
+</script>

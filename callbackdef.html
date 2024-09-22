@@ -1,0 +1,48 @@
+<script>
+    let students = [
+    {
+            name: 'Ram',
+            age: 15,
+            marks: 80,
+        },
+        {
+            name: 'Shyam',
+            age: 18,
+            marks: 70,
+        },
+        {
+            name: 'Raj',
+            age: 20,
+            marks: 60,
+        },
+        {
+            name: 'Ravi',
+            age: 16,
+            marks: 50,
+        },
+        {
+            name: 'Ravi',
+            age: 22,
+            marks: 40,
+        }
+    ]
+    function addStudent(newStudent,callback){
+        setTimeout(function(){
+            students.push(newStudent)
+            callback(students.length-1)
+        },4000)
+    }
+    // function display(index){
+    //         console.log(students[index]);
+    // }
+    let newStudent={
+        name: 'nikhil',
+        age: 23,
+        marks: 56
+    }
+    let index;
+    addStudent(newStudent,(index)=>{
+    // addStudent(newStudent,function(index){
+     console.log(students[index]);
+    })
+</script>

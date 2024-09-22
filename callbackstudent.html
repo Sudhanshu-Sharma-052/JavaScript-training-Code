@@ -1,0 +1,45 @@
+<script>
+     let students = [
+        {
+            name: 'Ram',
+            age: 15,
+            marks: 80,
+        },
+        {
+            name: 'Shyam',
+            age: 18,
+            marks: 70,
+        },
+        {
+            name: 'Raj',
+            age: 20,
+            marks: 60,
+        },
+        {
+            name: 'Ravi',
+            age: 16,
+            marks: 50,
+        },
+        {
+            name: 'Ravi',
+            age: 22,
+            marks: 90,
+        },
+    ]
+    function showStudents(students,callback){
+        setTimeout(function(){
+            let student1 = students[0]
+            let maxMarks = students[0].marks
+            students.forEach((student) => {
+                if(student.marks>maxMarks){
+                    maxMarks = student.marks
+                    student1 = student
+                }
+            });
+            callback(student1)
+        },4000)
+    }
+     showStudents(students, (student)=>{
+     console.log(student);
+    })
+</script>

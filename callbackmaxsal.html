@@ -1,0 +1,43 @@
+<script>
+    
+    let employee =[
+        {
+            name: 'Ram',
+            age: 35,
+            salary: 8000,
+        },
+        {
+            name: 'Shyam',
+            age: 38,
+            salary: 18000,
+        },
+        {
+            name: 'Raj',
+            age: 40,
+            salary: 85000,
+        },
+    ]  
+        function addEmployee(newEmployee,callback){
+        employee.push(newEmployee)
+        let maxSal=employee[0].salary;
+        employee.forEach((maxSal) => {
+            if(employee.salary>=maxSal){
+                maxSal=employee.salary;
+            }
+            
+        });
+        callback(maxSal)
+        }
+        let newEmployee = {
+            name: 'nikhil',
+            age: 23,
+            salary:4000
+        }
+
+        let index;
+    addEmployee(newEmployee,(maxSal)=>{
+    // addStudent(newStudent,function(index){
+     console.log(maxSal, 'maxSalary')
+    });
+
+</script>

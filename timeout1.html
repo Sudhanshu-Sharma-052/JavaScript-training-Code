@@ -1,0 +1,52 @@
+<script>
+    let student = [
+        {
+            name: 'Ram',
+            age: 15,
+            marks: 80,
+        },
+        {
+            name: 'Shyam',
+            age: 18,
+            marks: 70,
+        },
+        {
+            name: 'Raj',
+            age: 20,
+            marks: 60,
+        },
+        {
+            name: 'Ram',
+            age: 16,
+            marks: 50,
+        },
+        {
+            name: 'Ravi',
+            age: 22,
+            marks: 40,
+        },
+    ] 
+    function showStudents(){
+    setTimeout(function(){
+        student.forEach((student)=>{
+            console.log(student.name);
+        })
+    },5000)
+}
+
+function addStudent(){
+    setTimeout(()=>{
+        student.push({
+        name:'shivam',
+        age:28,
+        marks:65
+    })
+    },3000)
+}
+
+console.log('welcome....');
+addStudent();
+showStudents();
+    console.log('thanks.....');
+    
+</script>

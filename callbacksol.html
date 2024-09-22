@@ -1,0 +1,31 @@
+<script>
+function getUser(id,callback){
+    setTimeout(function(){
+        // Reading data from db
+        callback({id:1,name: 'Ram'})
+    },3000)
+}
+
+function getRepos(id,callback){
+    setTimeout(function(){
+        callback(['R1','R2','R3'])
+    },3000)
+}
+
+function getCommits(id,callback){
+    setTimeout(function(){
+        callback(['C1','C2','C3'])
+    },3000)
+}
+
+getUser(1,(user)=>{
+    console.log(user);
+    getRepos(user.id,(repos)=>{
+        console.log(repos);
+        getCommits(repos[1],(commits)=>{
+            console.log(commits);
+        })
+    })
+})
+
+</script>

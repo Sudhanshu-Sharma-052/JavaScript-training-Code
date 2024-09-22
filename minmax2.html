@@ -1,0 +1,20 @@
+<script>
+    let arr = [12,34,12,56,12,67,34]
+    let min = arr[0]
+    let max = 0
+    let len = arr.length
+    for(let i = 0; i<len-1; i++)
+    {
+    if (min>arr[i]) {
+        min=arr[i]
+    }
+    if (max<arr[i]) {
+        max=arr[i]   
+    }
+    min
+    max
+}
+console.log("minimum value in array is" +min);
+    
+console.log("maximum value in array is" +max);
+</script>

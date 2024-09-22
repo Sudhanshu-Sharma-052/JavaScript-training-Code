@@ -1,0 +1,38 @@
+<script>
+    let transaction = [
+        {
+            transactionId: 12345,
+            transactionDate: '11/2/2024',
+            transactionAmount: 4000,
+            transactionDay: 'monday',
+            customerName: 'Sudhanshu'
+        },
+        {
+            transactionId: 1234,
+            transactionDate: '11/3/2024',
+            transactionAmount: 462891,
+            transactionDay: 'tuesday',
+            customerName: 'Shivam'
+        },
+        {
+            transactionId: 123,
+            transactionDate: '15/2/2024',
+            transactionAmount: 46236,
+            transactionDay: 'monday',
+            customerName: 'prince'
+        }
+    ]
+    let a = transaction.map(function(tran) {
+return{
+    transactionId:tran.transactionId,
+    transactionAmount:tran.transactionAmount,
+    customerName:tran.customerName,
+};
+    })
+ console.log(a);
+
+ const b = transaction.filter(function(fun){
+    return fun.transactionAmount>40005
+ })
+ console.log(b);
+</script>

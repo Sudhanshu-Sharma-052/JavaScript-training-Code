@@ -1,0 +1,22 @@
+<script>
+    let a = 17
+    let flag = true
+    let isPrime = false
+    for(i=2;i<=parseInt(a/2);i++){
+        if (a%i===0) {
+           flag = false
+           break;
+        }
+    }
+        if (flag) {
+            isPrime=true 
+        }
+        else{
+            isPrime=false
+        }
+    console.log(isPrime,'isPrime');
+    let numbers = [10,30,55,11,35,90]
+    let result = numbers.filter((number)=>{
+        return true
+    })
+</script>

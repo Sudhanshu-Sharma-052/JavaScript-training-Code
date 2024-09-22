@@ -1,0 +1,40 @@
+<script>
+    let totalSalary = 0;
+    let emp =[
+        {
+            name: 'Ram',
+            age: 35,
+            salary: 8000,
+        },
+        {
+            name: 'Shyam',
+            age: 38,
+            salary: 18000,
+        },
+        {
+            name: 'Raj',
+            age: 40,
+            salary: 85000,
+        },
+        {
+            name: 'Ravi',
+            age: 25,
+            salary: 75000,
+        },
+    ]
+    let maxSalary = emp[0].salary
+    let name = emp[0].name
+    emp.forEach((emp)=>{
+        console.log(emp.name)
+        if (emp.salary>maxSalary) {
+            maxSalary = emp.salary
+            name = emp.name  
+        }
+        totalSalary = totalSalary+emp.salary
+    })
+
+    console.log(maxSalary,"maxSalary");
+    console.log(name,"name");
+
+
+</script>

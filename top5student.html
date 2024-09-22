@@ -1,0 +1,50 @@
+<script>
+    let students = [
+        {
+        name:'prince',
+        age:34,
+        marks:56
+        },
+        {
+        name:'vansh',
+        age:23,
+        marks:45
+        },
+        {
+        name:'ram',
+        age:12,
+        marks:34
+        },
+        {
+        name:'shivam',
+        age:35,
+        marks:78
+        },
+        {
+        name:'vashu',
+        age:25,
+        marks:86
+        },
+        {
+        name:'atul',
+        age:30,
+        marks:43
+        },
+        {
+        name:'shivani',
+        age:24,
+        marks:89
+        },
+    ]
+function getTop5Students(students,callback) {
+    let sortedStudents = students.sort((a, b) => b.marks - a.marks);
+    // return sortedStudents.slice(0, 5);
+    callback(students)
+}
+ getTop5Students(students,function(students){
+console.log("Top 5 students by marks:", students);
+
+let sort = students.slice(0,5)
+console.log(sort);
+ })
+</script>

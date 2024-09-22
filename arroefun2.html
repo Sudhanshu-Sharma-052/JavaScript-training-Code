@@ -1,0 +1,61 @@
+<script>
+let student1 = {
+    name: " Deepanshu",
+    age: 20,
+    marks: 90
+}
+let student5 = {
+    name: "prince",
+    age: 20,
+    marks: 80
+}
+let student4 = {
+    name: "Sudhanshu",
+    age: 20,
+    marks: 40
+}
+let student3 = {
+    name: "kunal",
+    age: 20,
+    marks: 50
+}
+let student2 = {
+    name: "ujjwal",
+    age: 20,
+    marks: 70
+}
+
+let students = [
+    student1,
+    student2,
+    student3,
+    student4,
+    student5
+]
+
+
+
+
+// Function to calculate the average marks and find the student with minimum marks
+const calculationMinMarksAndAverage = (students) => {
+    let minMarksStudent = students[0];
+    let totalMarks = 0;
+
+    students.forEach((student) => {
+        // Calculate total marks for average
+        totalMarks += student.marks;
+
+        // Find the student with minimum marks
+        if (minMarksStudent.marks > student.marks) {
+            minMarksStudent = student;
+        }
+    });
+
+    // Calculate average marks
+    averageMarks = totalMarks / students.length;
+
+    return { minMarksStudent, averageMarks };
+}
+
+console.log(calculationMinMarksAndAverage(students)) 
+</script>

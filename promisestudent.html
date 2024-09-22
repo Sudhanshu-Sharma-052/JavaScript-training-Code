@@ -1,0 +1,33 @@
+<script>
+const students = [
+  { name: 'Anu', grade: 45 },
+  { name: 'Bob', grade: 55 },
+  { name: 'shivam', grade: 65 },
+  { name: 'David', grade: 48 },
+  { name: 'Eva', grade: 75 },
+  { name: 'shiva', grade: 85 },
+  { name: 'Geeta', grade: 42 },
+  { name: 'Himanshu', grade: 90 },
+  { name: 'vishal', grade: 50 },
+  { name: 'tezan', grade: 70 },
+  { name: 'Kara', grade: 80 }
+];
+function processStudentData() {
+  return new Promise((resolve, reject) => {
+    const firstTenStudents = students.slice(0, 10);
+    const filteredStudents = firstTenStudents.filter(student => student.grade >= 50);
+    if (filteredStudents.length > 0) {
+      resolve(filteredStudents);
+    } else {
+      reject('No students with grades 50 or above found.');
+    }
+  });
+}
+processStudentData()
+  .then(filteredStudents => {
+    console.log('Filtered Students:', filteredStudents);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+</script>

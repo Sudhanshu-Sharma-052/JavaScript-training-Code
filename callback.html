@@ -1,0 +1,15 @@
+<script>
+    function show(){
+        console.log('welcome.....');
+    }
+    // function display(callback){
+    //     console.log('welcome1');
+    //     callback()
+    function display(a,b,callback){
+        let c=a+b
+        console.log(c,'c');
+        console.log('welcome1');
+        callback()
+    }
+    display(10,20,show);
+</script>

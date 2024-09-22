@@ -1,0 +1,16 @@
+<script>
+    function display(){
+        console.log('your simple interest has been calculated.....');
+    }
+    function simpleInterest (p,r,t,callback){
+        setTimeout(function(){
+            let si = (p*r*t)/100
+       console.log(si, 'si'); 
+       callback()
+        },15000)
+    //  let si = (p*r*t)/100
+    //  p=principle,r=rate
+    //  console.log(si);
+    }
+    simpleInterest(1000,4,6,display)
+</script>

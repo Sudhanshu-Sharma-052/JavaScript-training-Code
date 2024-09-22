@@ -1,0 +1,30 @@
+<script>
+function getMovie(id,callback){
+setTimeout(function(){
+callback({id:1,movieName:'commando'})
+},4000)
+}
+
+function getCinema(movieName,callback){
+setTimeout(function(){
+callback(['fi-cinema','hi-cinema'])
+},4000)
+}
+
+function getTickets(name,callback){
+setTimeout(function(){
+callback({gold:1000,silver:500,premium:250})
+},4000)
+}
+
+getMovie(1,(movie)=>{
+    console.log(movie);
+    getCinema(movie.name,(cinemasName)=>{
+        console.log(cinemasName);
+        getTickets(cinemasName[0],(ticket)=>{
+            console.log(ticket);
+        })
+    })
+})
+
+</script>

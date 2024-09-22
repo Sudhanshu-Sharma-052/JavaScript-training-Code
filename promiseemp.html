@@ -1,0 +1,32 @@
+<script>
+function fetchEmployeeData() {
+  return new Promise((resolve, reject) => {
+    const employees = [
+      { name: 'Alice', salary: 50000 },
+      { name: 'Bob', salary: 60000 },
+      { name: 'Charlie', salary: 70000 }
+    ];
+    setTimeout(() => {
+      resolve(employees);
+    }, 3000);
+  });
+}
+function findMaxSalary() {
+  return fetchEmployeeData()
+    .then((employees) => {
+      if (!employees || employees.length === 0) {
+        throw new Error('No employee data found');
+      }
+
+      const maxSalary = employees.reduce((max, emp) => Math.max(max, emp.salary), 0);
+      return maxSalary;
+    });
+}
+findMaxSalary()
+  .then((maxSalary) => {
+    console.log('The maximum salary is:', maxSalary);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+</script>
